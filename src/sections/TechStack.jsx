@@ -1,6 +1,6 @@
 import React from 'react'
 import TitleHeader from "../components/TitleHeader.jsx";
-import {techStackIcons, techStackImgs} from "../constants/index.js";
+import {techStackIcons, techStackImgs, toolkitExtras} from "../constants/index.js";
 import TechIcon from "../components/Models/TechLogos/TechIcon.jsx";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
@@ -25,9 +25,14 @@ const TechStack = () => {
         <div id="skills" className={"flex-center section-padding"}>
            <div>
                <TitleHeader
-               title={"My Preferred Tech stack"}
-               sub={"🤝 The skills I Bring to the Table"}
+               title={"My preferred tech stack"}
+               sub={"🤝 Web, mobile, backend, data & delivery"}
                />
+               <div className="toolkit-extras" aria-label="Also used in shipped work">
+                   {toolkitExtras.map((item) => (
+                       <span key={item} className="project-chip">{item}</span>
+                   ))}
+               </div>
                {/*<div className={"tech-grid"}>*/}
           {/*         /!*{techStackIcons.map((icon) => (*!/*/}
           {/*         /!*    <div key={icon.name} className={"card-border tech-card overflow-hidden group xl:rounded-full rounded-lg"}>*!/*/}
