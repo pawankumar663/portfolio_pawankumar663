@@ -7,7 +7,7 @@ import ExperienceSection from "./sections/ExperienceSection.jsx";
 import TechStack from "./sections/TechStack.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
-import ResumeChatBot from "./components/ResumeChatBot.jsx";
+import ResumeChatBot from "./components/ResumeChatbot.jsx";
 
 function App() {
   return (
