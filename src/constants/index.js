@@ -46,11 +46,6 @@ const words = [
   { text: "Code", imgPath: `${import.meta.env.BASE_URL}images/code.svg` },
 ];
 
-const counterItems = [
-  { value: yearsOfExperience, suffix: "+", label: "Years of Experience" },
-  { value: 18, suffix: "+", label: "Shipped Products" },
-  { value: 5, suffix: "", label: "Companies" },
-];
 
 const logoIconsList = [
   {
@@ -222,21 +217,21 @@ const expCards = [
       "Collaborated with teams to ship user-friendly features from build to release.",
     ],
   },
-  {
-    id: 2,
-    company: "Vesure Pvt. Ltd.",
-    title: "React Native Developer",
-    review:
-      "Designed, developed, and published mobile applications for Android and iOS, including store releases and appointment and hospital products with Razorpay payments.",
-    imgPath: `${import.meta.env.BASE_URL}images/exp0.png`,
-    logoPath: `${import.meta.env.BASE_URL}images/logo0.png`,
-    responsibilities: [
-      "Specialized in building and deploying React Native apps for Android and iOS.",
-      "Kept performance and compatibility stable across a wide range of devices.",
-      "Published applications on Google Play Store and Apple App Store.",
-      "Shipped appointment and hospital information products with Razorpay checkout.",
-    ],
-  },
+  // {
+  //   id: 2,
+  //   company: "Vesure Pvt. Ltd.",
+  //   title: "React Native Developer",
+  //   review:
+  //     "Designed, developed, and published mobile applications for Android and iOS, including store releases and appointment and hospital products with Razorpay payments.",
+  //   imgPath: `${import.meta.env.BASE_URL}images/exp0.png`,
+  //   logoPath: `${import.meta.env.BASE_URL}images/logo0.png`,
+  //   responsibilities: [
+  //     "Specialized in building and deploying React Native apps for Android and iOS.",
+  //     "Kept performance and compatibility stable across a wide range of devices.",
+  //     "Published applications on Google Play Store and Apple App Store.",
+  //     "Shipped appointment and hospital information products with Razorpay checkout.",
+  //   ],
+  // },
   {
     id: 3,
     company: "Yes It Labs",
@@ -772,6 +767,12 @@ const about = {
     "Stripe / Razorpay payments and maps",
   ],
 };
+
+const counterItems = [
+  { value: yearsOfExperience, suffix: "+", label: "Years of Experience" },
+  { value: projects.length, suffix: "+", label: "Shipped Products" },
+  { value: expCards.length, suffix: "", label: "Companies" },
+];
 
 const education = [
   {
