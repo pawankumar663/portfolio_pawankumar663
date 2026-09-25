@@ -8,6 +8,7 @@ import {
   socialImgs,
   yearsOfExperience,
 } from "../constants/index.js";
+import { numberToWords } from "./tools.js";
 
 const STOP_WORDS = new Set([
   "a", "an", "the", "and", "or", "of", "to", "in", "for", "on", "at",
@@ -174,7 +175,7 @@ export function answerResumeQuery(rawQuery) {
   if (/^(hi|hello|hey|yo|hola|namaste)(\s|$)/.test(query) || /^(good\s(morning|evening|afternoon))/.test(query)) {
     return pick(
       `Hey. I’m Pawan’s resume bot — ${yearsOfExperience}+ years in web and mobile. What do you want to know?`,
-      `Hi. I answer from Pawan Kumar’s resume. He’s a full-stack web and mobile developer with ${yearsOfExperience}+ years of experience across five companies. You can ask about skills, a project, education, or contact. Say “explain” if you want a longer answer.`,
+      `Hi. I answer from Pawan Kumar’s resume. He’s a full-stack web and mobile developer with ${yearsOfExperience}+ years of experience across ${numberToWords(expCards.length)} companies. You can ask about skills, a project, education, or contact. Say “explain” if you want a longer answer.`,
       detailed
     );
   }
@@ -217,11 +218,11 @@ export function answerResumeQuery(rawQuery) {
 
   if (
     includesAny(query, ["year", "years", "how long", "career start"]) &&
-    !includesAny(query, ["company", "companies", "employer", "dogra", "vesure", "sigroo", "synergy", "yes it"])
+    !includesAny(query, ["company", "companies", "employer", "dogra", "sigroo", "synergy", "yes it"])
   ) {
     return pick(
       `${yearsOfExperience}+ years, starting 1 April 2021.`,
-      `Pawan’s professional clock starts on 1 April 2021, so that’s ${yearsOfExperience}+ years today. In that time he’s worked at five companies and shipped 14+ products — React Native apps on both stores, Next.js/React web apps, and backend work with Node, Firebase, and payments.`,
+      `Pawan’s professional clock starts on 1 April 2021, so that’s ${yearsOfExperience}+ years today. In that time he’s worked at ${numberToWords(expCards.length)} companies and shipped ${projects.length}+ products — React Native apps on both stores, Next.js/React web apps, and backend work with Node, Firebase, and payments.`,
       detailed
     );
   }
@@ -250,8 +251,8 @@ export function answerResumeQuery(rawQuery) {
       return pick(shortJob(namedJob.doc.job), longJob(namedJob.doc.job), detailed);
     }
     return pick(
-      "Five companies: Dogra, Vesure, Yes It Labs, Total Synergy, and Sigroo — mostly React Native, with React web mixed in.",
-      `He’s worked at five companies, newest first:\n${expCards.map((job) => `• ${job.title} at ${job.company} — ${job.review}`).join("\n")}\nAsk me to explain a company for a deeper look.`,
+      "{numberToWords(expCards.length)} companies: Dogra, Yes It Labs, Total Synergy, and Sigroo — mostly React Native, with React web mixed in.",
+      `He’s worked at ${expCards.length} companies, newest first:\n${expCards.map((job) => `• ${job.title} at ${job.company} — ${job.review}`).join("\n")}\nAsk me to explain a company for a deeper look.`,
       detailed
     );
   }

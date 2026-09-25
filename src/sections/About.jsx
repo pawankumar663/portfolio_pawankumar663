@@ -4,12 +4,14 @@ import {
   certifications,
   education,
   yearsOfExperience,
+  expCards,
+  projects,
 } from "../constants/index.js";
 
 const metrics = [
   { value: `${yearsOfExperience}+`, label: "Years shipping" },
-  { value: "5", label: "Companies" },
-  { value: "18+", label: "Products" },
+  { value: `${expCards.length}`, label: "Companies" },
+  { value: `${projects.length}+`, label: "Products" },
 ];
 
 const About = () => {

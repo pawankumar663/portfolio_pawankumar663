@@ -4,6 +4,7 @@ import GlowCard from "../components/GlowCard.jsx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { numberToWords } from "../utils/tools.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +59,7 @@ const ExperienceSection = () => {
       <div className="w-full h-full md:px-20 px-5">
         <TitleHeader
           title="Professional work experience"
-          sub="💼 Five companies — web, mobile & product delivery"
+          sub={`💼 ${numberToWords(expCards.length)} companies — web, mobile & product delivery`}
         />
         <div className="mt-32 relative">
           <div className="relative z-50 xl:space-y-32 space-y-10">
