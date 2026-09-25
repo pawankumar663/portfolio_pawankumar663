@@ -251,7 +251,7 @@ export function answerResumeQuery(rawQuery) {
       return pick(shortJob(namedJob.doc.job), longJob(namedJob.doc.job), detailed);
     }
     return pick(
-      "{numberToWords(expCards.length)} companies: Dogra, Yes It Labs, Total Synergy, and Sigroo — mostly React Native, with React web mixed in.",
+      "${numberToWords(expCards.length)} companies: Dogra, Yes It Labs, Total Synergy, and Sigroo — mostly React Native, with React web mixed in.",
       `He’s worked at ${expCards.length} companies, newest first:\n${expCards.map((job) => `• ${job.title} at ${job.company} — ${job.review}`).join("\n")}\nAsk me to explain a company for a deeper look.`,
       detailed
     );
